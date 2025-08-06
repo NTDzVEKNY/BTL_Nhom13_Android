@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000000</color>
+    <color name="white">#FFF8E1</color> <!-- Creamy White -->
+    <color name="table_available">#A5D6A7</color> <!-- Green -->
+    <color name="table_reserved">#FFE082</color> <!-- Yellow -->
+    <color name="table_occupied">#EF5350</color> <!-- Red -->
+    <color name="featured_item">#FFF8E1</color> <!-- Creamy White -->
+    <color name="featured_item_badge">#FFD700</color> <!-- Gold -->
+    <color name="colorDivider">#FFD700</color> <!-- Gold -->
+
+    <!-- Material Design Colors -->
+    <color name="purple_200">#FFD700</color>
+    <color name="purple_500">#FFB700</color>
+    <color name="purple_700">#FFD700</color>
+    <color name="teal_200">#FFF8E1</color>
+    <color name="teal_700">#FFD700</color>
+
+    <!-- Main theme colors -->
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#FFD700</color>
+
+    <!-- Accent color -->
+    <color name="colorAccent">#FFD700</color>
+
+    <!-- Background color -->
+    <color name="colorBackground">#FFF8E1</color>
+
+    <!-- Text color -->
+    <color name="textColor">#000000</color>
+
+    <!-- TabLayout selected text -->
+    <color name="tabSelectedTextColor">#FFD700</color>
+
+    <!-- TabLayout indicator -->
+    <color name="tabIndicatorColor">#FFD700</color>
+</resources>
