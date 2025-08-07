@@ -193,4 +193,14 @@ public class TableListActivity extends AppCompatActivity implements TableAdapter
         }
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (currentStatus.equals("Tất cả")) {
+            loadAllTables();
+        } else {
+            loadTablesByStatus(currentStatus);
+        }
+    }
 } 
