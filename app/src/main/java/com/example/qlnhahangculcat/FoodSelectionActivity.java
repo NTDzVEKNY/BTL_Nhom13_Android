@@ -19,8 +19,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.qlnhahangculcat.adapter.FoodSelectionAdapter;
 import com.example.qlnhahangculcat.database.DatabaseHelper;
-import com.example.qlnhahangculcat.model.Food;
-import com.example.qlnhahangculcat.model.OrderItem;
+import com.example.qlnhahangculcat.model.backup.Food;
+import com.example.qlnhahangculcat.model.backup.OrderItem;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;

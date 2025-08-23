@@ -1,4 +1,4 @@
-package com.example.qlnhahangculcat.model;
+package com.example.qlnhahangculcat.model.backup;
 
 import java.io.Serializable;
 

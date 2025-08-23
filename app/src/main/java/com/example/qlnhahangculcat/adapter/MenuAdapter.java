@@ -13,7 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.qlnhahangculcat.R;
-import com.example.qlnhahangculcat.model.Food;
+import com.example.qlnhahangculcat.model.backup.Food;
 
 import java.text.NumberFormat;
 import java.util.HashMap;

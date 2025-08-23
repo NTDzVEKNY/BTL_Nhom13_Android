@@ -13,8 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.qlnhahangculcat.R;
 import com.example.qlnhahangculcat.database.DatabaseHelper;
-import com.example.qlnhahangculcat.model.Order;
-import com.example.qlnhahangculcat.model.Table;
+import com.example.qlnhahangculcat.model.backup.Order;
+import com.example.qlnhahangculcat.model.backup.Table;
 
 import java.util.List;
 

@@ -6,9 +6,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.widget.Toast;
 
 import com.example.qlnhahangculcat.database.DatabaseHelper;
-import com.example.qlnhahangculcat.model.Food;
-import com.example.qlnhahangculcat.model.Table;
-import com.example.qlnhahangculcat.model.DailyMenu;
+import com.example.qlnhahangculcat.model.backup.Food;
+import com.example.qlnhahangculcat.model.backup.Table;
+import com.example.qlnhahangculcat.model.backup.DailyMenu;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

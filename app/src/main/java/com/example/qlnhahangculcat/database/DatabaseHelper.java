@@ -17,13 +17,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Collections;
 
-import com.example.qlnhahangculcat.model.DailyMenu;
-import com.example.qlnhahangculcat.model.Employee;
-import com.example.qlnhahangculcat.model.Food;
-import com.example.qlnhahangculcat.model.Table;
-import com.example.qlnhahangculcat.model.StatisticItem;
-import com.example.qlnhahangculcat.model.Order;
-import com.example.qlnhahangculcat.model.OrderItem;
+import com.example.qlnhahangculcat.model.backup.DailyMenu;
+import com.example.qlnhahangculcat.model.backup.Employee;
+import com.example.qlnhahangculcat.model.backup.Food;
+import com.example.qlnhahangculcat.model.backup.Table;
+import com.example.qlnhahangculcat.model.backup.StatisticItem;
+import com.example.qlnhahangculcat.model.backup.Order;
+import com.example.qlnhahangculcat.model.backup.OrderItem;
 import com.example.qlnhahangculcat.model.FoodCategory;
 
 public class DatabaseHelper extends SQLiteOpenHelper {

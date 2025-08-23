@@ -1,40 +1,35 @@
 package com.example.qlnhahangculcat.model;
 
-import java.io.Serializable;
+import com.google.gson.annotations.SerializedName;
 
-public class Table implements Serializable {
-    private long id;
+public class Table {
+
+    @SerializedName("id")
+    private int id;
+
+    @SerializedName("name")
     private String name;
+
+    @SerializedName("status")
+    private String status; // "available" or "occupied"
+
+    @SerializedName("capacity")
     private int capacity;
-    private String status; // "Trống", "Đã đặt", "Đang phục vụ"
-    private String note;
-    private String tableType; // "VIP", "Thường"
 
     public Table() {
     }
 
-    public Table(String name, int capacity, String status, String note, String tableType) {
+    public Table(String name, String status, int capacity) {
         this.name = name;
-        this.capacity = capacity;
         this.status = status;
-        this.note = note;
-        this.tableType = tableType;
+        this.capacity = capacity;
     }
 
-    public Table(long id, String name, int capacity, String status, String note, String tableType) {
-        this.id = id;
-        this.name = name;
-        this.capacity = capacity;
-        this.status = status;
-        this.note = note;
-        this.tableType = tableType;
-    }
-
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -46,14 +41,6 @@ public class Table implements Serializable {
         this.name = name;
     }
 
-    public int getCapacity() {
-        return capacity;
-    }
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
-
     public String getStatus() {
         return status;
     }
@@ -62,24 +49,11 @@ public class Table implements Serializable {
         this.status = status;
     }
 
-    public String getNote() {
-        return note;
+    public int getCapacity() {
+        return capacity;
     }
 
-    public void setNote(String note) {
-        this.note = note;
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
     }
-    
-    public String getTableType() {
-        return tableType;
-    }
-    
-    public void setTableType(String tableType) {
-        this.tableType = tableType;
-    }
-
-    @Override
-    public String toString() {
-        return name;
-    }
-} 
+}

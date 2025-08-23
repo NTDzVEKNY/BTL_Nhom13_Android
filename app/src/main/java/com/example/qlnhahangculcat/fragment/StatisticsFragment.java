@@ -22,7 +22,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.qlnhahangculcat.R;
 import com.example.qlnhahangculcat.adapter.StatisticsAdapter;
 import com.example.qlnhahangculcat.database.DatabaseHelper;
-import com.example.qlnhahangculcat.model.StatisticItem;
+import com.example.qlnhahangculcat.model.backup.StatisticItem;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.text.SimpleDateFormat;

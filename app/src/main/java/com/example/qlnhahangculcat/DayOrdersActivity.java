@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import com.example.qlnhahangculcat.adapter.DayOrderAdapter;
 import com.example.qlnhahangculcat.database.DatabaseHelper;
-import com.example.qlnhahangculcat.model.Order;
+import com.example.qlnhahangculcat.model.backup.Order;
 
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;

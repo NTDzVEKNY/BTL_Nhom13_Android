@@ -1,69 +1,86 @@
 package com.example.qlnhahangculcat.model;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Date;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
-public class Order implements Serializable {
-    private long id;
-    private long tableId;
-    private Date orderDate;
+public class Order {
+
+    @SerializedName("id")
+    private int id;
+
+    @SerializedName("table_id")
+    private int tableId;
+
+    @SerializedName("table_name")
+    private String tableName;
+
+    @SerializedName("order_date")
+    private long orderDate; // Thời gian Unix timestamp (millis)
+
+    @SerializedName("order_date_formatted")
+    private String orderDateFormatted; // Chuỗi ngày đã được định dạng từ API
+
+    @SerializedName("status")
+    private String status;
+
+    @SerializedName("total_amount")
     private double totalAmount;
-    private String status; // "Đang xử lý", "Đã thanh toán", "Đã hủy"
-    private List<OrderItem> orderItems;
-    private String tableName; // Tên bàn - không lưu vào DB, chỉ để hiển thị
+
+    @SerializedName("order_items")
+    private List<OrderItem> orderItems; // Danh sách các món trong đơn hàng
 
     public Order() {
-        this.orderItems = new ArrayList<>();
-        this.orderDate = new Date();
-        this.status = "Đang xử lý";
     }
 
-    public Order(long tableId) {
-        this();
-        this.tableId = tableId;
-    }
-
-    public Order(long id, long tableId, Date orderDate, double totalAmount, String status) {
-        this.id = id;
+    // Constructor cho việc thêm mới
+    public Order(int tableId, long orderDate, String status, double totalAmount, List<OrderItem> orderItems) {
         this.tableId = tableId;
         this.orderDate = orderDate;
-        this.totalAmount = totalAmount;
         this.status = status;
-        this.orderItems = new ArrayList<>();
+        this.totalAmount = totalAmount;
+        this.orderItems = orderItems;
     }
 
-    public long getId() {
+    // Getters và Setters
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public long getTableId() {
+    public int getTableId() {
         return tableId;
     }
 
-    public void setTableId(long tableId) {
+    public void setTableId(int tableId) {
         this.tableId = tableId;
     }
 
-    public Date getOrderDate() {
+    public String getTableName() {
+        return tableName;
+    }
+
+    public void setTableName(String tableName) {
+        this.tableName = tableName;
+    }
+
+    public long getOrderDate() {
         return orderDate;
     }
 
-    public void setOrderDate(Date orderDate) {
+    public void setOrderDate(long orderDate) {
         this.orderDate = orderDate;
     }
 
-    public double getTotalAmount() {
-        return totalAmount;
+    public String getOrderDateFormatted() {
+        return orderDateFormatted;
     }
 
-    public void setTotalAmount(double totalAmount) {
-        this.totalAmount = totalAmount;
+    public void setOrderDateFormatted(String orderDateFormatted) {
+        this.orderDateFormatted = orderDateFormatted;
     }
 
     public String getStatus() {
@@ -74,6 +91,14 @@ public class Order implements Serializable {
         this.status = status;
     }
 
+    public double getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(double totalAmount) {
+        this.totalAmount = totalAmount;
+    }
+
     public List<OrderItem> getOrderItems() {
         return orderItems;
     }
@@ -81,30 +106,4 @@ public class Order implements Serializable {
     public void setOrderItems(List<OrderItem> orderItems) {
         this.orderItems = orderItems;
     }
-
-    public void addOrderItem(OrderItem item) {
-        this.orderItems.add(item);
-        calculateTotal();
-    }
-
-    public void removeOrderItem(OrderItem item) {
-        this.orderItems.remove(item);
-        calculateTotal();
-    }
-
-    public void calculateTotal() {
-        double total = 0;
-        for (OrderItem item : orderItems) {
-            total += item.getTotalPrice();
-        }
-        this.totalAmount = total;
-    }
-
-    public String getTableName() {
-        return tableName;
-    }
-
-    public void setTableName(String tableName) {
-        this.tableName = tableName;
-    }
-} 
+}

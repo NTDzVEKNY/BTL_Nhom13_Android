@@ -17,8 +17,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.qlnhahangculcat.adapter.OrderItemAdapter;
 import com.example.qlnhahangculcat.database.DatabaseHelper;
-import com.example.qlnhahangculcat.model.Order;
-import com.example.qlnhahangculcat.model.OrderItem;
+import com.example.qlnhahangculcat.model.backup.Order;
+import com.example.qlnhahangculcat.model.backup.OrderItem;
 
 import java.text.NumberFormat;
 import java.text.ParseException;

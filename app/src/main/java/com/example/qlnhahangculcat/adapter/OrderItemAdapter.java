@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.qlnhahangculcat.R;
-import com.example.qlnhahangculcat.model.OrderItem;
+import com.example.qlnhahangculcat.model.backup.OrderItem;
 
 import java.text.NumberFormat;
 import java.util.List;

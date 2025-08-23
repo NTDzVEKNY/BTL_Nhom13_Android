@@ -24,7 +24,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.qlnhahangculcat.fragment.StatisticsFragment;
-import com.example.qlnhahangculcat.model.StatisticItem;
+import com.example.qlnhahangculcat.model.backup.StatisticItem;
 import com.example.qlnhahangculcat.statistics.StatisticsDetailsActivity;
 import com.example.qlnhahangculcat.utils.PdfExportHelper;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;

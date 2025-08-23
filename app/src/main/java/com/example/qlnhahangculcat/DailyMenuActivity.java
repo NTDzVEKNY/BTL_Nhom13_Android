@@ -19,7 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.qlnhahangculcat.adapter.DailyMenuAdapter;
 import com.example.qlnhahangculcat.database.DatabaseHelper;
-import com.example.qlnhahangculcat.model.DailyMenu;
+import com.example.qlnhahangculcat.model.backup.DailyMenu;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

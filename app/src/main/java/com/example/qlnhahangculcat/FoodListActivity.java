@@ -19,8 +19,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.qlnhahangculcat.adapter.FoodAdapter;
 import com.example.qlnhahangculcat.database.DatabaseHelper;
-import com.example.qlnhahangculcat.model.DailyMenu;
-import com.example.qlnhahangculcat.model.Food;
+import com.example.qlnhahangculcat.model.backup.DailyMenu;
+import com.example.qlnhahangculcat.model.backup.Food;
 import com.example.qlnhahangculcat.model.FoodCategory;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;

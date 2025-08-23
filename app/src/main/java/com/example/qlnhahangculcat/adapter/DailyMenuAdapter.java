@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.qlnhahangculcat.R;
-import com.example.qlnhahangculcat.model.DailyMenu;
+import com.example.qlnhahangculcat.model.backup.DailyMenu;
 
 import java.text.NumberFormat;
 import java.util.List;

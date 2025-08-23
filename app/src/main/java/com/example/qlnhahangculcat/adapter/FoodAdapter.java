@@ -15,7 +15,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.qlnhahangculcat.R;
-import com.example.qlnhahangculcat.model.Food;
+import com.example.qlnhahangculcat.model.backup.Food;
 
 import java.text.NumberFormat;
 import java.util.List;

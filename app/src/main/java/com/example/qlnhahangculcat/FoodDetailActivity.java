@@ -27,7 +27,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.qlnhahangculcat.adapter.CategoryChecklistAdapter;
 import com.example.qlnhahangculcat.database.DatabaseHelper;
-import com.example.qlnhahangculcat.model.Food;
+import com.example.qlnhahangculcat.model.backup.Food;
 import com.example.qlnhahangculcat.model.FoodCategory;
 
 import java.util.ArrayList;

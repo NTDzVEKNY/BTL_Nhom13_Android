@@ -18,7 +18,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.qlnhahangculcat.database.DatabaseHelper;
-import com.example.qlnhahangculcat.model.Employee;
+import com.example.qlnhahangculcat.model.backup.Employee;
 import com.example.qlnhahangculcat.model.Position;
 
 import java.text.SimpleDateFormat;

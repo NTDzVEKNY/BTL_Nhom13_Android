@@ -11,7 +11,7 @@ import android.widget.Toast;
 import androidx.core.content.FileProvider;
 
 import com.example.qlnhahangculcat.R;
-import com.example.qlnhahangculcat.model.StatisticItem;
+import com.example.qlnhahangculcat.model.backup.StatisticItem;
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;

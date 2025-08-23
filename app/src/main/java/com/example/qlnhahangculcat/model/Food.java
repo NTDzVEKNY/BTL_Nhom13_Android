@@ -1,72 +1,61 @@
 package com.example.qlnhahangculcat.model;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import com.google.gson.annotations.SerializedName;
+import com.example.qlnhahangculcat.model.FoodCategory;
 
-public class Food implements Serializable {
-    private long id;
+public class Food {
+    @SerializedName("id")
+    private int id;
+
+    @SerializedName("name")
     private String name;
-    private List<FoodCategory> categories;
+
+    // Sử dụng enum thay cho String
+    @SerializedName("category")
+    private FoodCategory category;
+
+    @SerializedName("price")
     private double price;
+
+    @SerializedName("description")
     private String description;
+
+    @SerializedName("image_url")
     private String imageUrl;
-    private boolean available;
+
+    @SerializedName("available")
+    private int available;
 
     public Food() {
-        this.categories = new ArrayList<>();
-        this.categories.add(FoodCategory.MON_CHINH); // Default category
     }
 
-    public Food(String name, List<FoodCategory> categories, double price, String description, String imageUrl, boolean available) {
+    // Constructor cho việc thêm mới
+    public Food(String name, FoodCategory category, double price, String description, String imageUrl, int available) {
         this.name = name;
-        this.categories = categories != null ? categories : new ArrayList<>();
+        this.category = category;
         this.price = price;
         this.description = description;
         this.imageUrl = imageUrl;
         this.available = available;
     }
 
-    public Food(long id, String name, List<FoodCategory> categories, double price, String description, String imageUrl, boolean available) {
+    // Constructor cho việc nhận dữ liệu từ API
+    public Food(int id, String name, FoodCategory category, double price, String description, String imageUrl, int available) {
         this.id = id;
         this.name = name;
-        this.categories = categories != null ? categories : new ArrayList<>();
-        this.price = price;
-        this.description = description;
-        this.imageUrl = imageUrl;
-        this.available = available;
-    }
-    
-    // Constructor with String category for compatibility with existing code
-    public Food(long id, String name, String categoryStr, double price, String description, String imageUrl, boolean available) {
-        this.id = id;
-        this.name = name;
-        this.categories = new ArrayList<>();
-        if (categoryStr != null && !categoryStr.isEmpty()) {
-            // Handle comma-separated categories
-            if (categoryStr.contains(",")) {
-                String[] categoryStrings = categoryStr.split(",");
-                for (String catStr : categoryStrings) {
-                    FoodCategory cat = FoodCategory.fromString(catStr.trim());
-                    if (cat != null) {
-                        this.categories.add(cat);
-                    }
-                }
-            } else {
-                this.categories.add(FoodCategory.fromString(categoryStr));
-            }
-        }
+        this.category = category;
         this.price = price;
         this.description = description;
         this.imageUrl = imageUrl;
         this.available = available;
     }
 
-    public long getId() {
+    // Getters and Setters
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -78,89 +67,12 @@ public class Food implements Serializable {
         this.name = name;
     }
 
-    public List<FoodCategory> getCategories() {
-        return categories;
-    }
-    
-    public void setCategories(List<FoodCategory> categories) {
-        this.categories = categories != null ? categories : new ArrayList<>();
-    }
-    
-    // For backward compatibility
     public FoodCategory getCategory() {
-        return categories != null && !categories.isEmpty() ? categories.get(0) : FoodCategory.MON_CHINH;
+        return category;
     }
-    
-    // For backward compatibility
+
     public void setCategory(FoodCategory category) {
-        if (this.categories == null) {
-            this.categories = new ArrayList<>();
-        }
-        if (category != null) {
-            if (this.categories.isEmpty()) {
-                this.categories.add(category);
-            } else {
-                this.categories.set(0, category);
-            }
-        }
-    }
-    
-    public String getCategoryString() {
-        if (categories == null || categories.isEmpty()) {
-            return "";
-        }
-        
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < categories.size(); i++) {
-            sb.append(categories.get(i).getDisplayName());
-            if (i < categories.size() - 1) {
-                sb.append(", ");
-            }
-        }
-        return sb.toString();
-    }
-    
-    // For compatibility with existing code
-    public void setCategory(String categoryStr) {
-        if (this.categories == null) {
-            this.categories = new ArrayList<>();
-        } else {
-            this.categories.clear();
-        }
-        
-        if (categoryStr != null && !categoryStr.isEmpty()) {
-            // Handle comma-separated categories
-            if (categoryStr.contains(",")) {
-                String[] categoryStrings = categoryStr.split(",");
-                for (String catStr : categoryStrings) {
-                    FoodCategory cat = FoodCategory.fromString(catStr.trim());
-                    if (cat != null) {
-                        this.categories.add(cat);
-                    }
-                }
-            } else {
-                this.categories.add(FoodCategory.fromString(categoryStr));
-            }
-        }
-    }
-    
-    public void addCategory(FoodCategory category) {
-        if (this.categories == null) {
-            this.categories = new ArrayList<>();
-        }
-        if (category != null && !this.categories.contains(category)) {
-            this.categories.add(category);
-        }
-    }
-    
-    public void removeCategory(FoodCategory category) {
-        if (this.categories != null && category != null) {
-            this.categories.remove(category);
-        }
-    }
-    
-    public boolean hasCategory(FoodCategory category) {
-        return this.categories != null && category != null && this.categories.contains(category);
+        this.category = category;
     }
 
     public double getPrice() {
@@ -188,27 +100,18 @@ public class Food implements Serializable {
     }
 
     public boolean isAvailable() {
-        return available;
+        return available == 1;
     }
 
     public void setAvailable(boolean available) {
-        this.available = available;
+        this.available = available ? 1 : 0;
     }
 
-    @Override
-    public String toString() {
-        return name;
+    public int getAvailable() {
+        return available;
     }
-    
-    // Static test method for debugging
-    public static void testCategoryParsing(String categoryStr) {
-        Food testFood = new Food();
-        testFood.setCategory(categoryStr);
-        System.out.println("Input string: " + categoryStr);
-        System.out.println("Parsed categories: " + testFood.getCategories().size());
-        System.out.println("Category string: " + testFood.getCategoryString());
-        for (FoodCategory category : testFood.getCategories()) {
-            System.out.println(" - " + category.getDisplayName());
-        }
+
+    public void setAvailable(int available) {
+        this.available = available;
     }
-} 
+}

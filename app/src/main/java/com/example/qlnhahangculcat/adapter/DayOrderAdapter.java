@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.qlnhahangculcat.R;
-import com.example.qlnhahangculcat.model.Order;
+import com.example.qlnhahangculcat.model.backup.Order;
 
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;

@@ -24,9 +24,9 @@ import androidx.core.content.FileProvider;
 
 import com.example.qlnhahangculcat.adapter.OrderItemAdapter;
 import com.example.qlnhahangculcat.database.DatabaseHelper;
-import com.example.qlnhahangculcat.model.Order;
-import com.example.qlnhahangculcat.model.OrderItem;
-import com.example.qlnhahangculcat.model.Table;
+import com.example.qlnhahangculcat.model.backup.Order;
+import com.example.qlnhahangculcat.model.backup.OrderItem;
+import com.example.qlnhahangculcat.model.backup.Table;
 
 import java.io.File;
 import java.io.FileOutputStream;

@@ -6,12 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.qlnhahangculcat.R;
-import com.example.qlnhahangculcat.model.Food;
-import com.example.qlnhahangculcat.model.OrderItem;
+import com.example.qlnhahangculcat.model.backup.Food;
+import com.example.qlnhahangculcat.model.backup.OrderItem;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;

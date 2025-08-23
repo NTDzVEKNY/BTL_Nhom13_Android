@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.qlnhahangculcat.DayOrdersActivity;
 import com.example.qlnhahangculcat.FoodListActivity;
 import com.example.qlnhahangculcat.R;
-import com.example.qlnhahangculcat.model.StatisticItem;
+import com.example.qlnhahangculcat.model.backup.StatisticItem;
 
 import java.text.NumberFormat;
 import java.text.ParseException;

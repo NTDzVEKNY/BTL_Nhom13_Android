@@ -1,67 +1,70 @@
 package com.example.qlnhahangculcat.model;
 
-import java.io.Serializable;
+import com.google.gson.annotations.SerializedName;
 
-public class OrderItem implements Serializable {
-    private long id;
-    private long orderId;
-    private long foodId;
-    private String name;
+public class OrderItem {
+
+    @SerializedName("id")
+    private int id;
+
+    @SerializedName("order_id")
+    private int orderId;
+
+    @SerializedName("food_id")
+    private int foodId;
+
+    @SerializedName("food_name")
+    private String foodName; // Tên món ăn từ API (sử dụng COALESCE)
+
+    @SerializedName("quantity")
     private int quantity;
+
+    @SerializedName("price")
     private double price;
 
-    // Default constructor
     public OrderItem() {
-        this.quantity = 0;
-        this.price = 0;
     }
 
-    // Constructor
-    public OrderItem(String name, int quantity, double price) {
-        this.name = name;
-        this.quantity = quantity;
-        this.price = price;
-    }
-    
-    // Full constructor
-    public OrderItem(long foodId, String name, int quantity, double price) {
+    // Constructor cho việc thêm mới
+    public OrderItem(int orderId, int foodId, String foodName, int quantity, double price) {
+        this.orderId = orderId;
         this.foodId = foodId;
-        this.name = name;
+        this.foodName = foodName;
         this.quantity = quantity;
         this.price = price;
     }
 
-    // Getter và Setter
-    public long getId() {
+    // Getters và Setters
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
-    
-    public long getOrderId() {
+
+    public int getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(long orderId) {
+    public void setOrderId(int orderId) {
         this.orderId = orderId;
     }
-    
-    public long getFoodId() {
+
+    public int getFoodId() {
         return foodId;
     }
 
-    public void setFoodId(long foodId) {
+    public void setFoodId(int foodId) {
         this.foodId = foodId;
     }
-    
-    public String getName() {
-        return name;
+
+    public String getFoodName() {
+        return foodName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFoodName(String foodName) {
+        this.foodName = foodName;
     }
 
     public int getQuantity() {
@@ -78,10 +81,5 @@ public class OrderItem implements Serializable {
 
     public void setPrice(double price) {
         this.price = price;
-    }
-
-    // Tính tổng giá trị của món ăn
-    public double getTotalPrice() {
-        return price * quantity;
     }
 }

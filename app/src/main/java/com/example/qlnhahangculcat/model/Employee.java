@@ -1,22 +1,35 @@
 package com.example.qlnhahangculcat.model;
 
-import java.io.Serializable;
+import com.google.gson.annotations.SerializedName;
+import com.example.qlnhahangculcat.model.Position;
 
-public class Employee implements Serializable {
-    private long id;
+public class Employee {
+    @SerializedName("id")
+    private int id;
+
+    @SerializedName("name")
     private String name;
+
+    // Sử dụng enum thay cho String
+    @SerializedName("position")
     private Position position;
+
+    @SerializedName("phone")
     private String phone;
+
+    @SerializedName("email")
     private String email;
+
+    @SerializedName("address")
     private String address;
+
+    @SerializedName("salary")
     private double salary;
+
+    @SerializedName("start_date")
     private String startDate;
 
-    public Employee() {
-        // Default to waiter position
-        this.position = Position.WAITER;
-    }
-
+    // Constructors
     public Employee(String name, Position position, String phone, String email, String address, double salary, String startDate) {
         this.name = name;
         this.position = position;
@@ -27,7 +40,7 @@ public class Employee implements Serializable {
         this.startDate = startDate;
     }
 
-    public Employee(long id, String name, Position position, String phone, String email, String address, double salary, String startDate) {
+    public Employee(int id, String name, Position position, String phone, String email, String address, double salary, String startDate) {
         this.id = id;
         this.name = name;
         this.position = position;
@@ -38,34 +51,12 @@ public class Employee implements Serializable {
         this.startDate = startDate;
     }
 
-    // Legacy constructor accepting string position (for backward compatibility)
-    public Employee(String name, String positionString, String phone, String email, String address, double salary, String startDate) {
-        this.name = name;
-        this.position = Position.fromString(positionString);
-        this.phone = phone;
-        this.email = email;
-        this.address = address;
-        this.salary = salary;
-        this.startDate = startDate;
-    }
-
-    // Legacy constructor accepting string position (for backward compatibility)
-    public Employee(long id, String name, String positionString, String phone, String email, String address, double salary, String startDate) {
-        this.id = id;
-        this.name = name;
-        this.position = Position.fromString(positionString);
-        this.phone = phone;
-        this.email = email;
-        this.address = address;
-        this.salary = salary;
-        this.startDate = startDate;
-    }
-
-    public long getId() {
+    // Getters and Setters
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -83,16 +74,6 @@ public class Employee implements Serializable {
 
     public void setPosition(Position position) {
         this.position = position;
-    }
-
-    // For backward compatibility with database
-    public String getPositionString() {
-        return position != null ? position.getDisplayName() : "";
-    }
-
-    // For backward compatibility with database
-    public void setPosition(String positionString) {
-        this.position = Position.fromString(positionString);
     }
 
     public String getPhone() {
@@ -134,9 +115,4 @@ public class Employee implements Serializable {
     public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
-
-    @Override
-    public String toString() {
-        return name;
-    }
-} 
+}
