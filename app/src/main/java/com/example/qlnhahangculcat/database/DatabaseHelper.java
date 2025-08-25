@@ -189,15 +189,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_DAILY_MENU_TABLE);
         db.execSQL(CREATE_ORDERS_TABLE);
         db.execSQL(CREATE_ORDER_ITEMS_TABLE);
-
-        // Insert a default user
-        ContentValues values = new ContentValues();
-        values.put(KEY_USER_FULLNAME, "Admin");
-        values.put(KEY_USER_USERNAME, "admin");
-        values.put(KEY_USER_PASSWORD, "123456");
-
-        // Inserting Row
-        db.insert(TABLE_USERS, null, values);
     }
 
     @Override
