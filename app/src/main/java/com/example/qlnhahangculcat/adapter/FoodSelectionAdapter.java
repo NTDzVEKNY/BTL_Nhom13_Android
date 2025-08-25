@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -130,7 +129,7 @@ public class FoodSelectionAdapter extends BaseAdapter {
         TextView textViewFoodCategory;
         TextView textViewFoodPrice;
         TextView textViewQuantity;
-        Button buttonDecrease;
-        Button buttonIncrease;
+        ImageButton buttonDecrease;
+        ImageButton buttonIncrease;
     }
 } 
